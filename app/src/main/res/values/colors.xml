@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_primary">#FFF8F0</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="accent_orange">#FF6F00</color>
+    <color name="accent_orange_light">#FFA726</color>
+    <color name="accent_green">#2E7D32</color>
+    <color name="accent_green_light">#66BB6A</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#616161</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorPrimary">#FF6F00</color>
+    <color name="colorPrimaryVariant">#E65100</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#2E7D32</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorBackground">#FFF8F0</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <!-- Difficulty level colors (light mode) -->
+    <color name="difficulty_easy">#2E7D32</color>
+    <color name="difficulty_medium">#E65100</color>
+    <color name="difficulty_hard">#C62828</color>
+</resources>

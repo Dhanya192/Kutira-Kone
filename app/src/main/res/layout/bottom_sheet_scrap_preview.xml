@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bg_card">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="#CCCCCC"/>
+
+    <!-- Hero image -->
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_image_placeholder"/>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title + color dot row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/colorDotPreview"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_color_dot"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvPreviewTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fabric Title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+        </LinearLayout>
+
+        <!-- Posted by -->
+        <TextView
+            android:id="@+id/tvPreviewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by Artisan"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            android:layout_marginTop="2dp"/>
+
+        <!-- Tags row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvPreviewMaterial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cotton"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_tag_material"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"/>
+
+            <TextView
+                android:id="@+id/tvPreviewColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvPreviewSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.5m"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/accent_orange"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!-- Info rows -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="14dp"
+            android:background="#FFF3E0"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvPreviewLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍 Location"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvPreviewDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="6dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPreviewClose"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Close"
+                app:strokeColor="@color/divider"
+                android:textColor="@color/text_secondary"
+                app:cornerRadius="12dp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPreviewAction"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="🔄 Request Swap"
+                android:backgroundTint="@color/accent_orange"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

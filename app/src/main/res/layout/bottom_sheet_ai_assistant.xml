@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ROOT must be match_parent height so layout_weight on NestedScrollView works.
+    The BottomSheetBehavior in code forces STATE_EXPANDED + full height.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/divider"/>
+
+    <!-- Title bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="✨ AI Craft Assistant"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered by Gemini"
+            android:textSize="11sp"
+            android:textColor="@color/accent_orange"/>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <!-- Suggestion chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipSuggestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"/>
+    </HorizontalScrollView>
+
+    <!-- Chat scroll area: weight=1 fills all remaining space between header and input bar -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollAiResponse"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:clipToPadding="false"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAiPlaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👋 Ask me anything about upcycling fabric scraps!\n\nTry: 'What can I make with 0.5m of silk?' or 'Give me easy beginner project ideas.'"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:alpha="0.6"
+                android:lineSpacingMultiplier="1.5"
+                android:padding="12dp"
+                android:gravity="center"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/tvAiResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Progress bar -->
+    <ProgressBar
+        android:id="@+id/progressAi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"/>
+
+    <!-- Divider above input -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <!-- Input row: always pinned at bottom -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSurface">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxCornerRadiusBottomEnd="24dp"
+            app:boxCornerRadiusBottomStart="24dp"
+            app:boxCornerRadiusTopEnd="24dp"
+            app:boxCornerRadiusTopStart="24dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAiInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ask about fabric crafts..."
+                android:textSize="14sp"
+                android:imeOptions="actionSend"
+                android:inputType="textCapSentences"
+                android:maxLines="2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/btnAiSend"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_add"
+            android:background="@drawable/bg_tag_material"
+            android:backgroundTint="@color/accent_orange"
+            android:tint="@color/white"
+            android:contentDescription="Send"/>
+
+    </LinearLayout>
+
+</LinearLayout>

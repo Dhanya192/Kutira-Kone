@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark backgrounds -->
+    <color name="bg_primary">#1A1210</color>
+    <color name="bg_card">#2A1F1A</color>
+    <!-- Accent — slightly lighter for contrast on dark -->
+    <color name="accent_orange">#FF8F30</color>
+    <color name="accent_orange_light">#FFB74D</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_green_light">#81C784</color>
+    <!-- Text -->
+    <color name="text_primary">#F5F0EB</color>
+    <color name="text_secondary">#BCAAA4</color>
+    <color name="text_hint">#795548</color>
+    <!-- Divider -->
+    <color name="divider">#3E2C26</color>
+    <!-- White stays white (used for icon tints on coloured buttons) -->
+    <color name="white">#FFFFFF</color>
+    <!-- Material colour roles -->
+    <color name="colorPrimary">#FF8F30</color>
+    <color name="colorPrimaryVariant">#E65100</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#4CAF50</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorBackground">#1A1210</color>
+    <color name="colorSurface">#2A1F1A</color>
+    <!-- Difficulty level colors (dark mode — lighter for readability) -->
+    <color name="difficulty_easy">#66BB6A</color>
+    <color name="difficulty_medium">#FFB74D</color>
+    <color name="difficulty_hard">#EF5350</color>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kutira.kone.ui.home.HomeFragment"
+        android:label="Home">
+        <argument
+            android:name="filterMaterial"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.kutira.kone.ui.browse.BrowseMapFragment"
+        android:label="Browse"/>
+
+    <fragment
+        android:id="@+id/swapFragment"
+        android:name="com.kutira.kone.ui.swap.SwapFragment"
+        android:label="Swaps"/>
+
+    <fragment
+        android:id="@+id/ideasFragment"
+        android:name="com.kutira.kone.ui.ideas.IdeasFragment"
+        android:label="Ideas">
+        <action
+            android:id="@+id/action_ideas_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.kutira.kone.ui.home.ProfileFragment"
+        android:label="Profile"/>
+
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.kutira.kone.ui.upload.UploadFragment"
+        android:label="Upload">
+        <action
+            android:id="@+id/action_upload_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <action
+        android:id="@+id/action_home_to_upload"
+        app:destination="@id/uploadFragment"/>
+
+</navigation>
