@@ -3,6 +3,7 @@
 *.aar
 *.ap_
 *.aab
+app/src/main/assets/service_account.json
 
 # Files for the ART/Dalvik VM
 *.dex
